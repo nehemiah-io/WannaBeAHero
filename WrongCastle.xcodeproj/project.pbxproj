@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5255CEF11D3953580058F051 /* EnemySprite.sks in Resources */ = {isa = PBXBuildFile; fileRef = 5255CEF01D3953580058F051 /* EnemySprite.sks */; };
 		5255CEF31D3961490058F051 /* Platform.sks in Resources */ = {isa = PBXBuildFile; fileRef = 5255CEF21D3961490058F051 /* Platform.sks */; };
 		52A5B0D71D36F2FD0079BA36 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A5B0D61D36F2FD0079BA36 /* AppDelegate.swift */; };
 		52A5B0DB1D36F2FD0079BA36 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A5B0DA1D36F2FD0079BA36 /* GameScene.swift */; };
@@ -21,7 +20,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		5255CEF01D3953580058F051 /* EnemySprite.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = EnemySprite.sks; sourceTree = "<group>"; };
 		5255CEF21D3961490058F051 /* Platform.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Platform.sks; sourceTree = "<group>"; };
 		52A5B0D31D36F2FD0079BA36 /* WrongCastle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WrongCastle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		52A5B0D61D36F2FD0079BA36 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -69,7 +67,6 @@
 				52A5B0D61D36F2FD0079BA36 /* AppDelegate.swift */,
 				52A5B0EE1D394F250079BA36 /* GameScene.sks */,
 				5255CEF21D3961490058F051 /* Platform.sks */,
-				5255CEF01D3953580058F051 /* EnemySprite.sks */,
 				52A5B0DA1D36F2FD0079BA36 /* GameScene.swift */,
 				52A5B0EC1D36F6900079BA36 /* hero.sks */,
 				52A5B0F01D3950D20079BA36 /* Gun.sks */,
@@ -144,7 +141,6 @@
 				5255CEF31D3961490058F051 /* Platform.sks in Resources */,
 				52A5B0F11D3950D20079BA36 /* Gun.sks in Resources */,
 				52A5B0E51D36F2FD0079BA36 /* LaunchScreen.storyboard in Resources */,
-				5255CEF11D3953580058F051 /* EnemySprite.sks in Resources */,
 				52A5B0EF1D394F250079BA36 /* GameScene.sks in Resources */,
 				52A5B0E21D36F2FD0079BA36 /* Assets.xcassets in Resources */,
 				52A5B0ED1D36F6900079BA36 /* hero.sks in Resources */,

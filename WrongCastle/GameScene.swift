@@ -20,16 +20,18 @@ class GameScene: SKScene {
     // Physics body category bitmasks
     // ------------------------------
     // We'll use these to determine missle-fire collisions
-    private let missileCategory: UInt32 = 0x1 << 0   // 00000000000000000000000000000001 in binary
-    private let EnemyCategory: UInt32   = 0x1 << 1   // 00000000000000000000000000000010 in binary
-    private let heroCategory: UInt32 = 0x1 << 2      //00000000000000000000000000000100 in binary
+    private let missileCategory: UInt32 = 0x1 << 0   //000001 in binary
+    private let enemyCategory: UInt32   = 0x1 << 1   //000010 in binary
+    private let heroCategory: UInt32 = 0x1 << 2      //000100 in binary
     private let noneCategory: UInt32 = 0
     
-    
+    //Sprite Usages
     var hero:SKNode!
     var Gun: SKSpriteNode!
-   
+    var enemy: SKSpriteNode!
     var Boss: SKSpriteNode!
+    
+    //Button Usages
     var LeftButton: SKSpriteNode!
     var RightButton: SKSpriteNode!
     var JumpButton: SKSpriteNode!
@@ -44,7 +46,12 @@ class GameScene: SKScene {
             /* Set up your scene here */
         hero = self.childNodeWithName("//hero")
         hero.physicsBody?.categoryBitMask = heroCategory
-       // hero.physicsBody?.collisionBitMask = EnemyCategory
+       // hero.physicsBody?.collisionBitMask = enemyCategory
+        
+        
+        for i in 1...5 {
+            spawnenemy()
+        }
         
     }
     
@@ -80,34 +87,47 @@ class GameScene: SKScene {
                 
             } else if (node.name == "ShootButton"){
                 //Implement missile function
-                let Hero_Ref = self.childNodeWithName("Hero_Ref")
-                let Missile = SKSpriteNode(imageNamed: "Missile")
-                Missile.zPosition = 0
+                let n = childNodeWithName("//hero")
+                    for touch in touches {
+                        print(n!.position)
+                        let location = touch.locationInNode(self)
+                }
                 
                 
-                let missilePause = hero.position
+                let Hero_Ref = self.convertPoint(n!.position, fromNode: n!.parent!)
+                let MissileTexture = SKTexture(imageNamed: "Missile")
+                
+                let Missile = SKSpriteNode(texture: MissileTexture)
+                Missile.setScale(0.5)
+                Missile.name = "Missile"
+                
+                
+                
+                let missilePause = hero.convertPoint(hero.position, toNode: self)
                 Missile.position = missilePause
                 print("missilePause \(missilePause)")
                 
                 let action = SKAction.moveToX(self.size.width, duration: 0.8)
                 let actionDone = SKAction.removeFromParent()
-                //Missile.runAction(SKAction.sequence([action, actionDone]))
+                Missile.runAction(SKAction.sequence([action, actionDone]))
+                
+                
                 
                 Missile.physicsBody = SKPhysicsBody(rectangleOfSize: Missile.size)
                 
-                Missile.physicsBody?.categoryBitMask = missileCategory
-                Missile.physicsBody?.collisionBitMask = noneCategory
-                Missile.physicsBody?.contactTestBitMask = EnemyCategory
                 
-                Missile.physicsBody?.affectedByGravity = false
-                Missile.physicsBody?.dynamic = false
+                Missile.physicsBody!.categoryBitMask = missileCategory
+                Missile.physicsBody!.collisionBitMask = enemyCategory
+                Missile.physicsBody!.contactTestBitMask = enemyCategory
+                
+                Missile.physicsBody!.affectedByGravity = false
+                Missile.physicsBody!.dynamic = false
                 self.addChild(Missile)
-
                 
             }
         }
     }
-    
+
     
     
     
@@ -127,4 +147,29 @@ class GameScene: SKScene {
             
         }
     }
+    func spawnenemy() {
+        var enemyTexture = SKTexture(imageNamed: "fireball")
+        
+        let enemy = SKSpriteNode(texture: enemyTexture)
+        enemy.setScale(0.05)
+        enemy.name = "fireball"
+        
+        //Mod to make enemy appear anywhere 0 to 319
+        let x: CGFloat = CGFloat(arc4random() % 260)+30
+        let y: CGFloat = CGFloat(arc4random() % 407)+101
+        
+        enemy.position = CGPoint(x: x, y: y)
+        
+        var enemyPhysicsSize = CGSize(width: enemy.size.width,height: enemy.size.height)
+        enemy.physicsBody = SKPhysicsBody(rectangleOfSize: enemyPhysicsSize)
+        enemy.physicsBody?.dynamic = false
+        
+        enemy.physicsBody!.categoryBitMask = enemyCategory
+        enemy.physicsBody!.contactTestBitMask = noneCategory
+        enemy.physicsBody!.collisionBitMask = heroCategory
+        
+        self.addChild(enemy)
+        
+    }
+    
 }
