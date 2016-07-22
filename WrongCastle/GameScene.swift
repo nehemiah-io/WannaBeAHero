@@ -120,30 +120,7 @@ class GameScene: SKScene {
                 
                
                 
-                
-                
-                
-               /* let missilePause = hero.convertPoint(hero.position, toNode: self)
-                Missile.position = missilePause
-                print("missilePause \(missilePause)")
-                
-                let action = SKAction.moveToX(self.size.width, duration: 0.8)
-                let actionDone = SKAction.removeFromParent()
-                Missile.runAction(SKAction.sequence([action, actionDone]))
-                
-                
-                
-                Missile.physicsBody = SKPhysicsBody(rectangleOfSize: Missile.size)
-                
-                
-                Missile.physicsBody!.categoryBitMask = missileCategory
-                Missile.physicsBody!.collisionBitMask = enemyCategory
-                Missile.physicsBody!.contactTestBitMask = enemyCategory
-                
-                Missile.physicsBody!.affectedByGravity = false
-                Missile.physicsBody!.dynamic = false*/
-                
-                
+
             
        
     }
@@ -192,40 +169,12 @@ class GameScene: SKScene {
         
     }
     
+    func chase(){
+        
+        
+        
+    }
     
-    /*func shoot(){
-        let MissileTexture = SKTexture(imageNamed: "Missile")
-        
-        let Missile = SKSpriteNode(texture: MissileTexture)
-        Missile.setScale(0.5)
-        Missile.name = "Missile"
-        
-        if let n = childNodeWithName("//hero") {
-            for touch in touches {
-                print(n.position)
-                let location = touch.locationInNode(n.parent!)
-                if n.containsPoint(location) {
-                    let dx = CGFloat(1000)
-                    let dy = CGFloat(5000)
-                    if location.x > n.position.x / 2 {
-                        n.physicsBody!.applyImpulse(CGVector(dx: -dx , dy: dy))
-                    } else {
-                        n.physicsBody!.applyImpulse(CGVector(dx: dx , dy: dy))
-                    }
-                    
-                } else {
-                    let nodePos = self.convertPoint(n.position, fromNode: n.parent!)
-                    
-                    let size = CGSize(width: 20, height: 20)
-                    let bullet = SKSpriteNode(color: UIColor.greenColor(), size: size)
-                    bullet.position = nodePos
-                    addChild(bullet)
-                    
-                    let move = SKAction.moveToX(frame.width, duration: 1)
-                    let remove = SKAction.removeFromParent()
-                    let seq = SKAction.sequence([ move, remove ])
-                    bullet.runAction(seq) */
-                    
     
 }
         
