@@ -5,11 +5,6 @@
 //  Created by MacBook Pro  on 7/13/16.
 //  Copyright (c) 2016 NiidMo Games. All rights reserved.
 //
-    
-
-
-
-
 
 
     
@@ -89,7 +84,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     
     
-    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
 
         /* Called when a touch begins */
         for touch: AnyObject in touches {
@@ -206,15 +201,17 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         let enemyPhysicsSize = CGSize(width: enemy.size.width,height: enemy.size.height)
         enemy.physicsBody = SKPhysicsBody(rectangleOfSize: enemyPhysicsSize)
-        enemy.physicsBody?.dynamic = false
+        enemy.physicsBody?.dynamic = true
+        enemy.physicsBody?.affectedByGravity =  false
         
         enemy.physicsBody!.categoryBitMask = enemyCategory
         enemy.physicsBody!.contactTestBitMask = missileCategory | heroCategory
         enemy.physicsBody!.collisionBitMask = heroCategory
         
         if enemy.position != hero.position{
-            enemy.physicsBody?.applyImpulse(CGVector(dx: 5 * direction, dy: -7))
-            print(direction)
+            
+            
+            
         }
         
         self.addChild(enemy)

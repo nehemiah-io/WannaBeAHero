@@ -15,8 +15,9 @@
 		52A5B0E51D36F2FD0079BA36 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52A5B0E31D36F2FD0079BA36 /* LaunchScreen.storyboard */; };
 		52A5B0ED1D36F6900079BA36 /* hero.sks in Resources */ = {isa = PBXBuildFile; fileRef = 52A5B0EC1D36F6900079BA36 /* hero.sks */; };
 		52A5B0EF1D394F250079BA36 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 52A5B0EE1D394F250079BA36 /* GameScene.sks */; };
-		52A5B0F11D3950D20079BA36 /* Gun.sks in Resources */ = {isa = PBXBuildFile; fileRef = 52A5B0F01D3950D20079BA36 /* Gun.sks */; };
 		582917501D468EBE005AA099 /* MSButtonNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5829174F1D468EBE005AA099 /* MSButtonNode.swift */; };
+		582917521D47D6BE005AA099 /* MainScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582917511D47D6BE005AA099 /* MainScene.swift */; };
+		582917541D47D9F7005AA099 /* MainScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 582917531D47D9F7005AA099 /* MainScene.sks */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,8 +31,9 @@
 		52A5B0E61D36F2FD0079BA36 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		52A5B0EC1D36F6900079BA36 /* hero.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = hero.sks; sourceTree = "<group>"; };
 		52A5B0EE1D394F250079BA36 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; name = GameScene.sks; path = ../GameScene.sks; sourceTree = "<group>"; };
-		52A5B0F01D3950D20079BA36 /* Gun.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Gun.sks; sourceTree = "<group>"; };
 		5829174F1D468EBE005AA099 /* MSButtonNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSButtonNode.swift; sourceTree = "<group>"; };
+		582917511D47D6BE005AA099 /* MainScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainScene.swift; sourceTree = "<group>"; };
+		582917531D47D9F7005AA099 /* MainScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MainScene.sks; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,10 +69,11 @@
 				52A5B0D61D36F2FD0079BA36 /* AppDelegate.swift */,
 				52A5B0EE1D394F250079BA36 /* GameScene.sks */,
 				52A5B0DA1D36F2FD0079BA36 /* GameScene.swift */,
+				582917511D47D6BE005AA099 /* MainScene.swift */,
 				52A5B0EC1D36F6900079BA36 /* hero.sks */,
 				5829174F1D468EBE005AA099 /* MSButtonNode.swift */,
-				52A5B0F01D3950D20079BA36 /* Gun.sks */,
 				52A5B0DC1D36F2FD0079BA36 /* GameViewController.swift */,
+				582917531D47D9F7005AA099 /* MainScene.sks */,
 				52A5B0DE1D36F2FD0079BA36 /* Main.storyboard */,
 				52A5B0E11D36F2FD0079BA36 /* Assets.xcassets */,
 				52A5B0E31D36F2FD0079BA36 /* LaunchScreen.storyboard */,
@@ -138,12 +141,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				52A5B0F11D3950D20079BA36 /* Gun.sks in Resources */,
 				52A5B0E51D36F2FD0079BA36 /* LaunchScreen.storyboard in Resources */,
 				52A5B0EF1D394F250079BA36 /* GameScene.sks in Resources */,
 				52A5B0E21D36F2FD0079BA36 /* Assets.xcassets in Resources */,
 				52A5B0ED1D36F6900079BA36 /* hero.sks in Resources */,
 				52A5B0E01D36F2FD0079BA36 /* Main.storyboard in Resources */,
+				582917541D47D9F7005AA099 /* MainScene.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -157,6 +160,7 @@
 				52A5B0DB1D36F2FD0079BA36 /* GameScene.swift in Sources */,
 				52A5B0DD1D36F2FD0079BA36 /* GameViewController.swift in Sources */,
 				52A5B0D71D36F2FD0079BA36 /* AppDelegate.swift in Sources */,
+				582917521D47D6BE005AA099 /* MainScene.swift in Sources */,
 				582917501D468EBE005AA099 /* MSButtonNode.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
