@@ -11,7 +11,13 @@
 import SpriteKit
     
 class GameScene: SKScene, SKPhysicsContactDelegate {
+    var gameState: GameSceneState = .Active
     
+    
+    enum GameSceneState {
+        case Active, GameOver
+    }
+
     
     
     // Physics body category bitmasks
@@ -171,6 +177,9 @@ override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
     }
         
     override func update(currentTime: CFTimeInterval) {
+        if gameState != .Active { return }
+
+        
             /* Called before each frame is rendered */
         if isTouching {
             hero.physicsBody?.applyImpulse(CGVector(dx: 5 * direction, dy: 0))
@@ -237,7 +246,44 @@ override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         // hero ran into enemy
             contact.bodyA.node?.removeFromParent()
             print(" hero hit enemy")
-        
+            gameState = .GameOver
+            
+            let death = SKAction.playSoundFileNamed("Aw Man", waitForCompletion: false)
+            self.runAction(death)
+            
+            /* Stop any new angular velocity being applied */
+            hero.physicsBody?.allowsRotation = false
+            
+            /* Reset angular velocity */
+            hero.physicsBody?.angularVelocity = 0
+            
+            /* Stop hero flapping animation */
+            hero.removeAllActions()
+            let heroDeath = SKAction.runBlock({
+                
+                /* Put our hero face down in the dirt */
+              
+                /* Stop hero from colliding with anything else */
+                self.hero.physicsBody?.collisionBitMask = 0
+                
+            })
+            
+            /* Run action */
+            hero.runAction(heroDeath)
+            
+            /* Show restart button */
+            buttonRestart.state = .Active
+            /* Load the shake action resource */
+            let shakeScene:SKAction = SKAction.init(named: "Shake")!
+            
+            
+            /* Loop through all nodes  */
+            for node in self.children {
+                
+                /* Apply effect each ground node */
+                node.runAction(shakeScene)
+            }
+
         }
 
 
